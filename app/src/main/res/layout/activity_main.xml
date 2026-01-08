@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AEP Validation App"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_700"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test Adobe Experience Platform Mobile SDK"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"
+            android:textColor="@android:color/darker_gray" />
+
+        <!-- Status Section -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/statusTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⏳ Initializing..."
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ECID Section -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Experience Cloud ID"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/ecidTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ECID: (not retrieved yet)"
+                    android:textSize="14sp"
+                    android:textIsSelectable="true"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="monospace" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Action Buttons -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actions"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/sendEdgeEventButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📤 Send Edge Event"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.Material3.Button.ElevatedButton" />
+
+        <Button
+            android:id="@+id/sendEdgeEventWithDataButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📦 Send Edge Event (with Product Data)"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.Material3.Button.ElevatedButton" />
+
+        <Button
+            android:id="@+id/getEcidButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔍 Get ECID"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.Material3.Button.TonalButton" />
+
+        <Button
+            android:id="@+id/clearLogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🗑️ Clear Log / Reset UI"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+
+        <!-- Log Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Log"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#F5F5F5">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <TextView
+                    android:id="@+id/logTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Waiting for events...\n"
+                    android:textSize="12sp"
+                    android:fontFamily="monospace"
+                    android:padding="12dp"
+                    android:textIsSelectable="true" />
+
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💡 Tip: Use Logcat with tag 'AEPValidationApp' or 'AdobeExperienceSDK'"
+            android:textSize="11sp"
+            android:textColor="@android:color/darker_gray"
+            android:gravity="center"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>

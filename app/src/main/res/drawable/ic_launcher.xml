@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    
+    <!-- Background -->
+    <path
+        android:fillColor="#6200EE"
+        android:pathData="M0,0h48v48H0z"/>
+    
+    <!-- Letter "A" for AEP -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,8 L12,40 L17,40 L19,34 L29,34 L31,40 L36,40 L24,8z M21,28 L24,16 L27,28 L21,28z"/>
+    
+</vector>

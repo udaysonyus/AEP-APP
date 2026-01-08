@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.aepvalidation'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.aepvalidation"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // AndroidX Core
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // =========================================================
+    // ADOBE EXPERIENCE PLATFORM MOBILE SDK DEPENDENCIES
+    // Using BOM (Bill of Materials) for version management
+    // =========================================================
+    
+    // Adobe BOM - manages all Adobe SDK versions (version 3.8.0 to 4.0.0)
+    implementation platform('com.adobe.marketing.mobile:sdk-bom:3.8.0')
+    
+    // Core Extension (required)
+    implementation 'com.adobe.marketing.mobile:core'
+    
+    // Edge Extension (for sending Edge events)
+    implementation 'com.adobe.marketing.mobile:edge'
+    
+    // Edge Identity Extension (required for Edge events to work properly)
+    implementation 'com.adobe.marketing.mobile:edgeidentity'
+    
+    // Identity Extension (for ECID management - legacy Identity service)
+    implementation 'com.adobe.marketing.mobile:identity'
+    
+    // Lifecycle Extension (for app lifecycle tracking)
+    implementation 'com.adobe.marketing.mobile:lifecycle'
+    
+    // Signal Extension (for data collection)
+    implementation 'com.adobe.marketing.mobile:signal'
+    
+    // UserProfile Extension (for user profile attributes)
+    implementation 'com.adobe.marketing.mobile:userprofile'
+    
+    // =========================================================
+    // OPTIONAL: Assurance Extension (for debugging with Adobe Assurance)
+    // Uncomment if you want to use Adobe Assurance for debugging
+    // =========================================================
+    // implementation 'com.adobe.marketing.mobile:assurance'
+
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
