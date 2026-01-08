@@ -26,7 +26,7 @@ public class MainApplication extends Application {
     // =========================================================
     // YOUR AEP ENVIRONMENT ID (from Adobe Data Collection)
     // =========================================================
-    private static final String ENVIRONMENT_ID = "7595315f3cd2/71609fe69f67/launch-a0689aa162c6-development";
+    private static final String ENVIRONMENT_ID = "YOUR_ENV_ID_HERE";
 
     // Flag to track initialization status
     private static boolean isAepInitialized = false;
